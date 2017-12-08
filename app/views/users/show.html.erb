@@ -1,3 +1,16 @@
-<div class="pull-left user-info">
-    <h1> Email: <%= @user.email %> </h1>
-</div>
+<h1 style="color:#7d75fc;"> <%= @user.email %>'s Profile </h1>
+
+  <% if @user.sign_in_count < 2 %>
+    <h3> You have signed in <%= @user.sign_in_count %> time. </h3>
+  <% elsif %>
+    <h3> You have signed in <%= @user.sign_in_count %> times </h3>
+  <% elsif @user.sign_in_count > 10 %>
+    <h3> Great job getting it done! Keep it up! </h3>
+  <% end %>
+
+  <div class="col-md-8">
+    <%= render partial: 'items/form', locals: { item: @item } %>
+  </div>
+
+  <div class="col-md-8">
+<%= render partial: 'items/item', locals: { item: @item } %>
