@@ -20,6 +20,10 @@ class ItemsController < ApplicationController
     end
   end
   
+  def destroy
+    @item = current_user.items.find(params[:id])
+    @item.destroy
+  end
   
   
   private
