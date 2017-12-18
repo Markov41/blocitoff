@@ -6,7 +6,7 @@
         <%= link_to "Completed", user_items_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
       </h4>
       <small>
-           <%= "#{distance_of_time_in_words(Time.now, item.created_at + 7.days)} before deletion" %>
+           submitted on <%= (item.created_at) %> <br> 
       </small>
     </div>
   </div>
